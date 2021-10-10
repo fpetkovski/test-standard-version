@@ -9,15 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     if: "contains(github.event.head_commit.message, 'chore(release)')"
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - name: checkout
+        uses: actions/checkout@v2
         with:
-          node-version: 'lts/*'
+          fetch-depth: 0
       - name: generate tag and release body
         run: |
           git config user.name example
@@ -33,7 +28,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_name: ${{ steps.publish_tag.outputs.tag_name }}
+          release_name: Release ${{ steps.publish_tag.outputs.tag_name }}
           tag_name: ${{ steps.publish_tag.outputs.tag_name }}
           body_path: RELEASE_BODY.md
           prerelease: true
