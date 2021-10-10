@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/fpetkovski/test-standard-version/compare/v1.2.0...v1.2.1) (2021-10-10)
+
+
+### Bug Fixes
+
+* bugfix ([b7c4ebe](https://github.com/fpetkovski/test-standard-version/commit/b7c4ebeae42da05e9cfaddcd67b2e27c3b447898))
+
 ## [1.2.0](https://github.com/fpetkovski/test-standard-version/compare/v1.1.0...v1.2.0) (2021-10-10)
 
 
